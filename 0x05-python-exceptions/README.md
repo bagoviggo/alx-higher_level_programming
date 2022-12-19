@@ -1,8 +1,8 @@
 # 0x05. Python - Exceptions
 
 ## Resources
--[Errors and Exceptions](https://alx-intranet.hbtn.io/rltoken/Yj7sDOzmKwICSHr7WEAW3A)
--[Learn to Program 11 Static & Exception Handling (starting at minute 7)](https://alx-intranet.hbtn.io/rltoken/xASzXarhF1sBhzYkJ14LvQ)
+* [Errors and Exceptions](https://alx-intranet.hbtn.io/rltoken/Yj7sDOzmKwICSHr7WEAW3A)
+* [Learn to Program 11 Static & Exception Handling (starting at minute 7)](https://alx-intranet.hbtn.io/rltoken/xASzXarhF1sBhzYkJ14LvQ)
 
 ## Requirements
 
