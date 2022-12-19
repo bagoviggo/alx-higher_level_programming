@@ -18,4 +18,9 @@
     The length of your files will be tested using wc
 
 
+| File   |      Description                        |
+|----------|:-------------------------------------:|
+| [0-safe_print_list.py](https://github.com/bagoviggo/alx-higher_level_programming/blob/master/0x05-python-exceptions/0-safe_print_list.py) |  left-aligned                         |
+| [1-safe_print_integer.py ](https://github.com/bagoviggo/alx-higher_level_programming/blob/master/0x05-python-exceptions/1-safe_print_integer.py) |    centered                           |
+| [2-safe_print_list_integers.py](https://github.com/bagoviggo/alx-higher_level_programming/blob/master/0x05-python-exceptions/2-safe_print_list_integers.py) | right-aligned                         |
 
