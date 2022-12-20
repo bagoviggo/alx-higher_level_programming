@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module defines a class Square"""
+"""Square class definition"""
 
 
 class Square:
@@ -13,4 +13,4 @@ class Square:
             size (int): size of a side of the square
         Returns: None
         """
-        self.size = size
+        self.__size = size
