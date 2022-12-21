@@ -58,3 +58,4 @@ class Square:
         for i in range(self.__size):
             print("".join(["#" for j in range(self.__size)]))
 
+
