@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-
-
 """Square class definition"""
+
+
 class Square:
     """Module to find a square
     Attributes:
