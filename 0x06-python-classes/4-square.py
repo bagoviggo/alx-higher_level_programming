@@ -5,7 +5,7 @@
 
 
 class Square:
-    """Represents a square
+    """Module to find a square
     Attributes:
         __size (int): size of a side of the square
     """
@@ -18,7 +18,7 @@ class Square:
         self.__size = size
 
     def area(self):
-        """Calculates the area of a square
+        """Calculatess the area of a square
         Returns: The area of the square
         """
         return self.__size ** 2
