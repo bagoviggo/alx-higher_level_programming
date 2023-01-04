@@ -58,6 +58,7 @@ class Rectangle:
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """ This method deletes an instance of the class """
-        type(self).number_of_instances -= 1
+        """ This method prints a message when the object is deleted """
+        instance_count = Rectangle.number_of_instances
+        Rectangle.number_of_instances = instance_count - 1
         print("Bye rectangle...")
