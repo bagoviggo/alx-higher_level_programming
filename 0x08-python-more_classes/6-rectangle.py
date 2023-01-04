@@ -3,7 +3,12 @@
 
 
 class Rectangle:
-    """ This is a class that represents a rectangle """
+    """ This is a class that represents a rectangle
+        Attributes:
+        number_of_instances (int): The number of Rectangle instances.
+    """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """ This is the constructor of the class """
         self.width = width
@@ -59,6 +64,6 @@ class Rectangle:
 
     def __del__(self):
         """ This method prints a message when the object is deleted """
-        instance_count = Rectangle.number_of_instances = 0
-        Rectangle.number_of_instances = instance_count - 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
