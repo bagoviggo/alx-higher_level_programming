@@ -1,0 +1,28 @@
+The ``Read File`` module
+===========================
+
+Usage: ``read_file``
+-------------------------
+
+First import ``read_file`` from the ``Read File`` module:
+    >>> read_file = __import__('0-read_file').read_file
+
+Implementation:
+
+    >>> read_file("my_file_0.txt")
+    We offer a truly innovative approach to education:
+    focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers.
+
+    >>> read_file("my_file_0.txt')
+    Traceback (most recent call last):
+        ...
+    SyntaxError: unterminated string literal
+
+    >>> read_file(my_file_0.txt)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'my_file_0' is not defined.
+
+    >>> read_file('my_file_0.txt')
+    We offer a truly innovative approach to education:
+    focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers.
