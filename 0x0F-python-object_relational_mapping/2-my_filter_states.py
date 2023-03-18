@@ -1,31 +1,24 @@
 #!/usr/bin/python3
-import MySQLdb
+"""
+Displays all values in the states table of the database hbtn_0e_0_usa
+whose name matches that supplied as argument.
+Usage: ./2-my_filter_states.py <mysql username> \
+                                <mysql password> \
+                                <database name> \
+                                <state name searched>
+"""
 import sys
+import MySQLdb
 
-if len(sys.argv) != 5:
-    print("Usage: {} username password database_name state_name".format(sys.argv[0]))
-    exit(1)
-
-# Get command line arguments
-username = sys.argv[1]
-password = sys.argv[2]
-database_name = sys.argv[3]
-state_name = sys.argv[4]
-
-# Connect to MySQL server
-db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database_name)
-
-# Create cursor object
-cursor = db.cursor()
-
-# Execute SQL query
-sql_query = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id ASC"
-cursor.execute(sql_query, ('%' + state_name + '%',))
-
-# Print results
-results = cursor.fetchall()
-for row in results:
-    print(row)
-
-# Close database connection
-db.close()
+if __name__ == "__main__":
+    db = MySQLdb.connect(user=sys.argv[1], port=3306, host="localhost",
+                         passwd=sys.argv[2], db=sys.argv[3])
+    c = db.cursor()
+    c.execute("SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY \
+    id ASC".format(sys.argv[4]))
+    states = c.fetchall()
+    for state in states:
+        if state[1] == sys.argv[4]:
+            print(state)
+    c.close()
+    db.close()
