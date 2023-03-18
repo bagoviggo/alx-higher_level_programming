@@ -1,27 +1,42 @@
-#!/usr/bin/python3
-""" selecting with mysqldb """
-import MySQLdb
+#!/usr/bin/env python3
 import sys
+import MySQLdb
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
+    # Check the number of arguments
+    if len(sys.argv) != 4:
+        print("Usage: {} username password database".format(sys.argv[0]))
+        sys.exit(1)
+
     try:
-        connection = MySQLdb.connect(
+        # Connect to the database
+        db = MySQLdb.connect(
             host="localhost",
             user=sys.argv[1],
             passwd=sys.argv[2],
-            port=3306,
-            db=sys.argv[3]
+            db=sys.argv[3],
+            port=3306
         )
-    except MySQLdb.Error:
-        print("error connecting")
-    cur = connection.cursor()
-    try:
-        cur.execute("SELECT * FROM states ORDER BY states.id")
-        rows = cur.fetchall()
+
+        # Get a cursor
+        cursor = db.cursor()
+
+        # Execute the query
+        cursor.execute("SELECT * FROM states ORDER BY id ASC")
+
+        # Fetch all the rows
+        rows = cursor.fetchall()
+
+        # Print the results
         for row in rows:
             print(row)
-    except MySQLdb.Error:
-        print("execution failed")
-    cur.close()
-    connection.close()
+
+    except MySQLdb.Error as e:
+        print("Error connecting to MySQL database: {}".format(e))
+        sys.exit(1)
+
+    finally:
+        # Close the cursor and database connection
+        cursor.close()
+        db.close()
