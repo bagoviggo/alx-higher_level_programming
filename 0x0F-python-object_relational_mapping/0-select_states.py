@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
+"""A script that selects all states from hbtn_0e_0 database"""
 import sys
 import MySQLdb
 
 
 if __name__ == '__main__':
     # Check the number of arguments
-    if len(sys.argv) != 4:
-        print("Usage: {} username password database".format(sys.argv[0]))
-        sys.exit(1)
-
     try:
         # Connect to the database
-        db = MySQLdb.connect(
+        connection = MySQLdb.connect(
             host="localhost",
             user=sys.argv[1],
             passwd=sys.argv[2],
@@ -20,7 +17,7 @@ if __name__ == '__main__':
         )
 
         # Get a cursor
-        cursor = db.cursor()
+        cursor = connection.cursor()
 
         # Execute the query
         cursor.execute("SELECT * FROM states ORDER BY id ASC")
@@ -39,4 +36,4 @@ if __name__ == '__main__':
     finally:
         # Close the cursor and database connection
         cursor.close()
-        db.close()
+        connection.close()
