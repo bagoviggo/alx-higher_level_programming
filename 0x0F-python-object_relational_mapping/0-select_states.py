@@ -2,6 +2,7 @@
 import sys
 import MySQLdb
 
+
 if __name__ == '__main__':
     # Check the number of arguments
     if len(sys.argv) != 4:
@@ -19,7 +20,8 @@ if __name__ == '__main__':
         user=username,
         passwd=password,
         db=database,
-        port=3306)
+        port=3306
+    )
 
     # Get a cursor
     cursor = db.cursor()
