@@ -2,9 +2,8 @@
 
 // A script that computes the number of tasks completed by user id.
 // Args: <API_URL> - https://jsonplaceholder.typicode.com/todos
-// 
+//
 // Usage: ./6-completed_tasks.js https://jsonplaceholder.typicode.com/todos
-
 
 const request = require('request');
 const url = process.argv[2];
