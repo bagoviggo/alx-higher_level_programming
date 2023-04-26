@@ -6,22 +6,22 @@
 
 const request = require('request');
 const url = process.argv[2];
+const wedgeId = '18';
 
 request(url, (error, response, body) => {
   if (!error && response.statusCode === 200) {
-    const films = JSON.parse(body);
-    let count = 0;
-    for (const filmIndex in films) {
-      const filmChars = films[filmIndex].characters;
+    const data = JSON.parse(body);
+    let wedgeCount = 0;
 
-      for (const characterIndex in filmChars) {
-        if (filmChars[characterIndex].includes('18')) {
-          count++;
-        }
+    data.results.forEach(({ characters }) => {
+      if (characters.includes(`https://swapi-api.alx-tools.com/api/people/${wedgeId}/`)) {
+        wedgeCount++;
       }
-    }
-    console.log(count);
+    });
+
+    console.log(wedgeCount);
   } else {
-    console.log('Error: Status code ' + response.status);
+    console.error('Error retrieving data from API');
   }
 });
+
