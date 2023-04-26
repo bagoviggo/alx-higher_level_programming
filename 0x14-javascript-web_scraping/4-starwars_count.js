@@ -24,4 +24,3 @@ request(url, (error, response, body) => {
     console.error('Error retrieving data from API');
   }
 });
-
