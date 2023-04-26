@@ -21,6 +21,6 @@ request(url, (error, response, body) => {
 
     console.log(wedgeCount);
   } else {
-    console.error('Error retrieving data from API');
+    console.log(error);
   }
 });
