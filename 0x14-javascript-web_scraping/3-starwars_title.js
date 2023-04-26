@@ -10,10 +10,10 @@ const id = process.argv[2];
 const url = 'https://swapi-api.alx-tools.com/api/films/';
 
 request(url + id, (error, response, body) => {
-  if (!error && response.statusCode == 200) {
+  if (!error && response.statusCode === 200) {
     const info = JSON.parse(body);
     console.log(info.title);
   } else {
-      console.log('Error code: ' + response.statusCode);
+    console.log('Error code: ' + response.statusCode);
   }
 });
